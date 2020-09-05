@@ -12,4 +12,12 @@ export default styled.button`
   font-family: ${({ theme: { fonts } }) => fonts.family};
   background: none;
   cursor: pointer;
+
+  @media (max-width: 500px) {
+    position: relative;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 `;

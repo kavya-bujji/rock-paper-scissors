@@ -12,6 +12,12 @@ export default styled.div`
       ${({ theme: { colors }, type }) => colors.primary[type].light};
     border-radius: 50%;
     bottom: ${(props) => (props.isPushed ? "-4px" : 0)};
+
+    @media (max-width: 768px) {
+      height: 100px;
+      width: 100px;
+      border-width: 10px;
+    }
   }
 
   .icon {
@@ -21,6 +27,10 @@ export default styled.div`
     bottom: 0;
     left: 0;
     right: 0;
+
+    @media (max-width: 768px) {
+      width: 40px;
+    }
   }
 
   .background {
@@ -32,6 +42,10 @@ export default styled.div`
     right: 0;
     background: #fff;
     border-radius: 50%;
+
+    @media (max-width: 768px) {
+      top: ${(props) => (props.isPushed ? 0 : "4px")};
+    }
   }
 
   .border-in {
@@ -55,5 +69,9 @@ export default styled.div`
     right: 0;
     background: ${({ theme: { colors }, type }) => colors.primary[type].dark};
     border-radius: 50%;
+
+    @media (max-width: 768px) {
+      bottom: -4px;
+    }
   }
 `;
