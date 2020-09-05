@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export default styled.div`
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
+  width: 60%;
+  margin: auto;
+  display: grid;
+  grid-template-areas: "header" "main";
+  grid-template-rows: 1fr 3fr;
   font-family: ${({ theme: { fonts } }) => fonts.family};
   font-weight: ${({ theme: { fonts } }) => fonts.weights.semiBold};
   color: ${({ theme: { colors } }) => colors.neutral.darkText};

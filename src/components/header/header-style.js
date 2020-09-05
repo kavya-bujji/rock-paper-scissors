@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export default styled.div`
-  width: 52%;
   padding: 17px 22px;
   display: flex;
   justify-content: space-between;
