@@ -11,6 +11,7 @@ export default styled.button`
   letter-spacing: 4px;
   font-family: ${({ theme: { fonts } }) => fonts.family};
   background: none;
+  box-shadow: 1px 1px 3px #111;
   cursor: pointer;
 
   &:hover {
@@ -18,11 +19,11 @@ export default styled.button`
     background: #fff;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: ${({ theme: { breakpoints } }) => breakpoints.tablet}) {
     position: relative;
     margin: auto;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 10px;
   }
 `;

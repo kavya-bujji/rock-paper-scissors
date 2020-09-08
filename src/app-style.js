@@ -10,13 +10,18 @@ export default styled.div`
   font-weight: ${({ theme: { fonts } }) => fonts.weights.semiBold};
   color: ${({ theme: { colors } }) => colors.neutral.darkText};
 
-  @media (min-width: 300px) {
-    width: 100%;
+  * {
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 768px) {
+    width: 70%;
   }
 
   @media (min-width: 1024px) {
     width: 60%;
   }
+
   @media (min-width: 1440px) {
     width: 30%;
   }

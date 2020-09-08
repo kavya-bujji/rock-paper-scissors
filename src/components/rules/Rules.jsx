@@ -4,7 +4,7 @@ import RulesStyle from './rules-style'
 export default ({setModal, isModalHide}) => {
   return (
     <RulesStyle onClick={() => setModal(!isModalHide)}>
-      RULES
+      Rules
     </RulesStyle>
   )
 }

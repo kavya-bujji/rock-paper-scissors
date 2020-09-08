@@ -31,6 +31,7 @@ export default {
       headerOutline: "hsl(217, 16%, 45%)",
       light: "#ccc",
     },
+    shadow: "1px 1px 3px #111",
   },
   fonts: {
     family: "Barlow Semi Condensed",

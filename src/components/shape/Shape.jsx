@@ -4,11 +4,15 @@ import {ReactComponent as Paper} from '../../assets/svg/icon-paper.svg';
 import {ReactComponent as Scissors} from '../../assets/svg/icon-scissors.svg';
 import ShapeStyle from './shape-style'
 
-export default ({ type }) => {
+export default ({ type, isLarged = false}) => {
   const [isPushed, setPush] = useState(false);
 
   return (
-      <ShapeStyle type={type} isPushed={isPushed} onClick={() => setPush(!isPushed)}> 
+      <ShapeStyle type={type} 
+        isLarged={isLarged} 
+        isPushed={isPushed} 
+        isEnhanced={false}
+        onClick={() => setPush(!isPushed)}> 
       <div className="border-out" />
       <div className="border">
       <div className="border-in" />

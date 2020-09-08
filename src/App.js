@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
-import styles from "./Styles";
+import styles from "./styles";
 import AppStyle from "./app-style";
 import Header from "./components/header/Header";
 import Rules from "./components/rules/Rules";
