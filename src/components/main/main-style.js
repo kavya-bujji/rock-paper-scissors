@@ -32,9 +32,6 @@ export default styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-
-    @media (max-width: 375px) {
-      width: 250px;
-    }
+    width: 250px;
   }
 `;

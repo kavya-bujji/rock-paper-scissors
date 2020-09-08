@@ -13,7 +13,7 @@ export default styled.div`
     border-radius: 50%;
     bottom: ${(props) => (props.isPushed ? "-4px" : 0)};
 
-    @media (max-width: 768px) {
+    @media (max-width: ${({ theme: { breakpoints } }) => breakpoints.tablet}) {
       height: 100px;
       width: 100px;
       border-width: 10px;
@@ -28,7 +28,7 @@ export default styled.div`
     left: 0;
     right: 0;
 
-    @media (max-width: 768px) {
+    @media (max-width: ${({ theme: { breakpoints } }) => breakpoints.tablet}) {
       width: 40px;
     }
   }
@@ -43,7 +43,7 @@ export default styled.div`
     background: #fff;
     border-radius: 50%;
 
-    @media (max-width: 768px) {
+    @media (max-width: ${({ theme: { breakpoints } }) => breakpoints.tablet}) {
       top: ${(props) => (props.isPushed ? 0 : "4px")};
     }
   }
@@ -70,7 +70,7 @@ export default styled.div`
     background: ${({ theme: { colors }, type }) => colors.primary[type].dark};
     border-radius: 50%;
 
-    @media (max-width: 768px) {
+    @media (max-width: ${({ theme: { breakpoints } }) => breakpoints.tablet}) {
       bottom: -4px;
     }
   }

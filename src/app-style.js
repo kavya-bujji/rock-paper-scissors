@@ -9,7 +9,6 @@ export default styled.div`
   font-family: ${({ theme: { fonts } }) => fonts.family};
   font-weight: ${({ theme: { fonts } }) => fonts.weights.semiBold};
   color: ${({ theme: { colors } }) => colors.neutral.darkText};
-  position: relative;
 
   @media (min-width: 300px) {
     width: 100%;

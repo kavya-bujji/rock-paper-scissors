@@ -13,6 +13,11 @@ export default styled.button`
   background: none;
   cursor: pointer;
 
+  &:hover {
+    color: ${({ theme: { colors } }) => colors.neutral.darkText};
+    background: #fff;
+  }
+
   @media (max-width: 500px) {
     position: relative;
     margin: auto;

@@ -1,6 +1,7 @@
 export default {
   breakpoints: {
-    mobile: "375px",
+    mobile: "425px",
+    tablet: "768px",
     desktop: "1366px",
   },
   colors: {

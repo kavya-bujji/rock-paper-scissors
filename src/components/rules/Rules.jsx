@@ -1,9 +1,9 @@
 import React from 'react';
 import RulesStyle from './rules-style'
 
-export default () => {
+export default ({setModal, isModalHide}) => {
   return (
-    <RulesStyle>
+    <RulesStyle onClick={() => setModal(!isModalHide)}>
       RULES
     </RulesStyle>
   )
