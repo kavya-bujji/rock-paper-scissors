@@ -13,12 +13,12 @@ export default styled.div`
   width: 100%;
 
   @media (min-width: ${({ theme: { breakpoints } }) => breakpoints.tablet}) {
-    grid-template-areas: "${({ result }) =>
-      result ? "you result house" : "you house"}";
-    grid-template-columns: ${({ result }) =>
-      result ? "repeat(3, 1fr)" : "repeat(2, 1fr)"};
+    grid-template-areas: "${({ isFinished }) =>
+      isFinished ? "you result house" : "you house"}";
+    grid-template-columns: ${({ isFinished }) =>
+      isFinished ? "repeat(3, 1fr)" : "repeat(2, 1fr)"};
     grid-template-rows: 1fr;
-    width: ${({ result }) => (result ? "160%" : "130%")};
+    width: ${({ isFinished }) => (isFinished ? "160%" : "130%")};
   }
 
   .player {

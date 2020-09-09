@@ -4,6 +4,7 @@ import Shape from '../shape/Shape';
 import GameStartStyle from './game-start-style';
 
 export default () => {
+
   return (
     <GameStartStyle>
       <Triangle className="triangle" />

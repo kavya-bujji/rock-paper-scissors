@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
-import MainStyle from './main-style';
+import React, { useContext } from 'react';
+import { Context } from '../../context/index';
 import GameStart from '../game-start/GameStart';
 import GameInProgress from '../game-in-progress/GameInProgress';
+import MainStyle from './main-style';
 
 export default () => {
-  const [isSelected, setSelection] = useState(true);
+  const [state, dispatch] = useContext(Context);
 
   return (
     <>
-    { isSelected ? <GameInProgress />: <GameStart /> }
+    { state.isPicked ? <GameInProgress player={state.player} house={state.house} /> : <GameStart /> }
     </>
   )
 }

@@ -1,33 +1,64 @@
-import React, {useState} from 'react';
-import GameInProgressStyle from './game-in-progress-style';
+import React, {useState, useEffect, useContext} from 'react';
+import { Context, resetGame, increaseScore } from '../../context';
 import Shape from '../shape/Shape';
+import GameInProgressStyle from './game-in-progress-style';
 
-export default () => {
-  const [result, setResult] = useState(true);
+export default ({ player, house }) => {
+  const [state, dispatch] = useContext(Context);
+  const [result, setResult] = useState('');
+  const [isFinished, setFinishing] = useState(true);
+  const [isHidden, setHide] = useState(false);
+
+  const dispatchWin = () => {
+    dispatch(increaseScore());
+    return setResult('You win');
+  }
+
+  const getWinner = () => {
+    if(player === house) return setResult('Tie');
+    else if((player === "rock" && house === "scissors") 
+    || (player === "paper" && house === "rock") 
+    || (player === "scissors" && house === "paper")) return dispatchWin();
+    else return setResult('You lose');
+  };
+
+  const delayResponse = () => {
+    setInterval(() => {
+      setHide(false);
+    }, 1000)
+
+    setInterval(() => {
+      setFinishing(true);
+    }, 1500);
+  }
+  
+  
+  useEffect(() => {
+    // delayResponse();
+    getWinner();
+  }, [])
 
   return (
-    <GameInProgressStyle result={result}>
+    <GameInProgressStyle isFinished={isFinished}>
       <div className="you player">
         <span>You picked</span>
         <div className="shape">
-          <Shape type="scissors" isLarged={true} /> 
-          <div className="blank" />
+          <Shape type={player} isLarged={true} isEnhanced={(result === "You win" && true)}/> 
         </div>
       </div>
       <div className="house player">
         <span>The house picked</span>
         <div className="shape">
-          <Shape type="paper" isLarged={true} />
+          {!isHidden ? <Shape type={house} isLarged={true} isEnhanced={(result === "You lose" && true)} /> : <div className="blank" />}
         </div>
       </div>
       {
-        result 
-        ? 
+        isFinished 
+        &&
         <div className="result">
-          <span>You lose</span>
-          <button>Play again</button>
+          <span>{result}</span>
+          <button onClick={() => dispatch(resetGame())}>Play again</button>
         </div>
-        : null
       }
     </GameInProgressStyle>
   )

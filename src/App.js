@@ -6,18 +6,21 @@ import Header from "./components/header/Header";
 import Rules from "./components/rules/Rules";
 import Main from "./components/main/Main";
 import Modal from "./components/modal/Modal";
+import { ContextProvider } from "./context";
 
 export default () => {
   const [isModalHide, setModal] = useState(true);
 
   return (
-    <ThemeProvider theme={styles}>
-      <AppStyle>
-        <Header />
-        <Main />
-        <Rules isModalHide={isModalHide} setModal={setModal} />
-        {!isModalHide ? <Modal setModal={setModal} /> : null}
-      </AppStyle>
-    </ThemeProvider>
+    <ContextProvider>
+      <ThemeProvider theme={styles}>
+        <AppStyle>
+          <Header />
+          <Main />
+          <Rules isModalHide={isModalHide} setModal={setModal} />
+          {!isModalHide ? <Modal setModal={setModal} /> : null}
+        </AppStyle>
+      </ThemeProvider>
+    </ContextProvider>
   );
 };
