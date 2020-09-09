@@ -18,8 +18,6 @@ export default {
       },
       rock: {
         light: "hsl(349, 70%, 56%)",
-        background:
-          "linear-gradient(to bottom, hsl(349, 71%, 52%) 0%, hsl(349, 70%, 56%) 100%)",
         dark: "hsl(349, 71%, 38%)",
       },
       lizard: "hsl(261, 73%, 60%)",

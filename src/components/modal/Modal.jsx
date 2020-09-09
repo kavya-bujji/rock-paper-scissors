@@ -7,7 +7,7 @@ export default ({ setModal }) => {
   return (
     <ModalStyle>
       <div className="container">
-        <span className="rules">RULES</span>
+        <span className="rules">Rules</span>
         <IconClose className="close" onClick={() => setModal(true)} />
         <ImageRules className="image" />
       </div>

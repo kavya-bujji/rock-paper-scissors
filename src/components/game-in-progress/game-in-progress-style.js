@@ -13,12 +13,10 @@ export default styled.div`
   width: 100%;
 
   @media (min-width: ${({ theme: { breakpoints } }) => breakpoints.tablet}) {
-    grid-template-areas: "${({ isFinished }) =>
-      isFinished ? "you result house" : "you house"}";
-    grid-template-columns: ${({ isFinished }) =>
-      isFinished ? "repeat(3, 1fr)" : "repeat(2, 1fr)"};
+    grid-template-areas: "you result house";
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
-    width: ${({ isFinished }) => (isFinished ? "160%" : "130%")};
+    width: 160%;
   }
 
   .player {
@@ -47,23 +45,6 @@ export default styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
-
-      .blank {
-        width: 100px;
-        height: 100px;
-        background: linear-gradient(
-          to bottom,
-          rgba(25, 36, 64, 0.6) 50%,
-          rgba(19, 28, 54, 0.6) 100%
-        );
-        border-radius: 50%;
-
-        @media (min-width: ${({ theme: { breakpoints } }) =>
-            breakpoints.tablet}) {
-          width: 200px;
-          height: 200px;
-        }
-      }
     }
   }
 

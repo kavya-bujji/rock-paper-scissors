@@ -1,16 +1,17 @@
 import React, { useContext } from 'react';
-import { Context, pickShape } from '../../context';
+import { Context } from '../../context';
+import { pickShape } from "../../context/actions";
 import randomPick from '../../utils/randomPick';
 import { ReactComponent as Rock } from '../../assets/svg/icon-rock.svg';
 import { ReactComponent as Paper } from '../../assets/svg/icon-paper.svg';
 import { ReactComponent as Scissors } from '../../assets/svg/icon-scissors.svg';
 import ShapeStyle from './shape-style'
 
-export default ({ type, isLarged = false, isEnhanced = false}) => {
+export default ({ type, isLarged, isEnhanced, isFinished}) => {
   const [state, dispatch] = useContext(Context);
 
   const handlePick = () => {
-    dispatch(pickShape(type, randomPick()));
+    if(!isFinished) return dispatch(pickShape(type, randomPick()));
   }
 
   return (
